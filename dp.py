@@ -10,6 +10,7 @@ Original file is located at
 """**FINAL CODE**"""
 
 import pandas as pd
+import re
 
 # Step 1: Extract and process the data from the text file
 file_path = "data.txt"
