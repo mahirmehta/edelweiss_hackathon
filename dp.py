@@ -97,6 +97,10 @@ for entry in entries:
 df = pd.DataFrame(data_list)
 
 df['Expiry Date'] = pd.to_datetime(df['Expiry Date'], format='%d%b%y')
+
+
+current_date = pd.Timestamp(datetime.date.today())
+df['Expiry'] = (df['Expiry Date'] - current_date).dt.days / 365
 # Step 3: Print the data as a table
 print(df)
 
