@@ -10,6 +10,7 @@ Original file is located at
 """**FINAL CODE**"""
 
 import pandas as pd
+import datetime
 import re
 
 # Step 1: Extract and process the data from the text file
@@ -95,6 +96,7 @@ for entry in entries:
 # Step 2: Convert the list of data dictionaries into a DataFrame
 df = pd.DataFrame(data_list)
 
+df['Expiry Date'] = pd.to_datetime(df['Expiry Date'], format='%d%b%y')
 # Step 3: Print the data as a table
 print(df)
 
